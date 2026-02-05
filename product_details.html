@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>JAMI's SHOP</h2>
+    <a href="/">Home</a>
+    <a href="/cart">🛒 Cart</a>
+</div>
+
+<div style="
+    max-width:900px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    display:flex;
+    gap:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+">
+
+    <img src="{{ product.image }}" style="width:300px;border-radius:10px;">
+
+    <div>
+        <h2>{{ product.name }}</h2>
+
+        <h3 style="color:green;">Rs:{{ product.price }}</h3>
+
+        <p style="margin:20px 0;">
+            {{ product.description }}
+        </p>
+
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="{{ product.id }}">
+            <input type="hidden" name="name" value="{{ product.name }}">
+            <input type="hidden" name="price" value="{{ product.price }}">
+            <button type="submit">Add to Cart</button>
+        </form>
+
+        <br>
+
+        <form action="/buy_now" method="POST">
+            <input type="hidden" name="product_id" value="{{ product.id }}">
+            <button type="submit" class="buy-now-btn">Buy Now</button>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

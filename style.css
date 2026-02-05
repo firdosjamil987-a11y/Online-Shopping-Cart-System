@@ -1,0 +1,1371 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #ff6f00;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* CATEGORIES */
+.categories {
+    background: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.categories button {
+    background: #fff;
+    border: 1px solid #ff6f00;
+    color: #ff6f00;
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.categories button:hover {
+    background: #ff6f00;
+    color: white;
+}
+
+/* PRODUCTS GRID */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+/* PRODUCT CARD */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.price {
+    color: #ff6f00;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* BUTTON */
+.card button {
+    background: #ff6f00;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.card button:hover {
+    background: #e65c00;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Apply animation to ALL add-to-cart buttons */
+.card form button {
+    position: relative;
+    overflow: hidden;
+}
+
+.card form button::after {
+    content: "✔ Added";
+    position: absolute;
+    inset: 0;
+    background: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: 0.3s;
+}
+
+.card form button:active::after {
+    transform: translateY(0);
+}
+
+.qty-btn {
+    background: #ff6f00;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+#search {
+    padding: 8px 15px;
+    width: 250px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+/* ===== LOGIN PAGE FULL SCREEN ===== */
+.login-body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #111, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== LOGIN BOX ===== */
+.login-container {
+    background: #111;
+    width: 350px;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+
+    box-shadow: 0 0 40px rgba(0,0,0,0.9);
+    transition: 0.3s ease;
+}
+
+/* Glow when clicked */
+.login-container:focus-within {
+    box-shadow: 
+        0 0 25px rgba(255,165,0,0.8),
+        0 0 60px rgba(255,165,0,0.4);
+}
+
+/* ===== TITLE ===== */
+.login-container h2 {
+    color: white;
+    margin-bottom: 25px;
+}
+
+/* ===== INPUT FIELDS ===== */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+
+    background: #000;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.8);
+    transition: 0.3s ease;
+}
+
+/* Glow input when clicked */
+.login-container input:focus {
+    outline: none;
+    border-color: orange;
+
+    box-shadow:
+        0 0 10px orange,
+        inset 0 0 10px rgba(255,165,0,0.6);
+}
+
+/* ===== LOGIN BUTTON ===== */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+
+    background: orange;
+    border: none;
+    border-radius: 8px;
+
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 0 15px rgba(255,165,0,0.6);
+    transition: 0.3s ease;
+}
+
+/* Button glow on hover */
+.login-container button:hover {
+    background: #ffb733;
+    box-shadow: 
+        0 0 20px orange,
+        0 0 40px rgba(255,165,0,0.6);
+}
+/* FULL PAGE CENTER */
+.login-body {
+    margin: 0;
+    height: 100vh;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* LOGIN BOX */
+.box {
+    width: 350px;
+    background: #858282;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+
+    box-shadow: 0 0 25px rgba(3, 3, 3, 0.8);
+    transition: 0.3s ease;
+}
+
+/* GLOW WHEN CLICK INSIDE */
+.box:focus-within {
+    box-shadow:
+        0 0 20px orange,
+        0 0 60px rgba(255,165,0,0.4);
+}
+
+/* TITLE */
+.box h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* INPUT FIELDS */
+.box input {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+
+    background: #ffffff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: rgb(5, 5, 5);
+
+    box-shadow: inset 0 0 5px rgba(231, 226, 226, 0.8);
+    transition: 0.3s ease;
+}
+
+/* INPUT GLOW */
+.box input:focus {
+    outline: none;
+    border-color: rgb(190, 118, 16);
+
+    box-shadow:
+        0 0 px orange,
+        inset 0 0 8px rgba(255,165,0,0.5);
+}
+
+/* BUTTON */
+.box button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 15px;
+
+    background: orange;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 0 15px rgba(255,165,0,0.6);
+    transition: 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.box button:hover {
+    box-shadow:
+        0 0 10px orange,
+        0 0 25px rgba(200,100,0,0.6);
+}
+
+/* LINKS */
+.box a {
+    color: orange;
+    text-decoration: none;
+}
+/* Make "New user?" text white */
+.box p {
+    color: white;
+}
+
+/* Make "Sign up" link white */
+.box p a {
+    color: white;
+}
+
+/* Optional: glow effect on hover */
+.box p a:hover {
+    color: orange;
+    text-shadow: 0 0 6px orange;
+}
+/* Make text inside input boxes bold */
+.box input {
+    font-weight: bold;
+}
+/* Search bar container */
+.search-container {
+    position: relative;
+    width: 300px;
+}
+
+/* Search input */
+.search-box {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border-radius: 25px;
+    border: 2px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Glow effect when clicked */
+.search-box:focus {
+    border-color: orange;
+    box-shadow: 0 0 8px orange;
+}
+
+/* Search icon inside box (right side) */
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    pointer-events: none;
+}
+/* SEARCH BAR STYLE */
+.search-bar {
+    width: 280px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* WHEN YOU CLICK ON SEARCH BAR */
+.search-bar:focus {
+    border-color: rgb(82, 80, 77);
+    box-shadow: 0 0 10px orange;
+}
+/* Search bar box */
+.search-box {
+    position: relative;
+    width: 320px;
+}
+
+/* Search input */
+.search-bar {
+    width: 100%;
+    padding: 12px 45px 12px 20px; /* space for icon */
+    border-radius: 30px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Glow when clicked */
+.search-bar:focus {
+    border-color: orange;
+    box-shadow: 0 0 10px orange;
+}
+
+/* Search icon */
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* ===== PRODUCT PAGE (DARAZ STYLE) ===== */
+
+body {
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.product-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: white;
+    display: flex;
+    gap: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    width: 40%;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.product-details {
+    width: 60%;
+}
+
+.product-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 28px;
+    color: #f57224;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.product-rating {
+    color: #faca51;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.quantity-box button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: #eee;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.buy-now {
+    background: #2abbe8;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    
+}
+
+.add-cart {
+    background: #f57224;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    
+}
+
+.buy-now:hover,
+.add-cart:hover {
+    opacity: 0.9;
+}
+
+.product-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+/* ===== DARAZ PRODUCT PAGE ===== */
+
+body {
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.product-container {
+    max-width: 1150px;
+    margin: 40px auto;
+    background: #fff;
+    display: flex;
+    padding: 25px;
+    gap: 30px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* LEFT IMAGE */
+.product-image {
+    width: 40%;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbs img {
+    width: 70px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+.thumbs img:hover {
+    border-color: orange;
+}
+
+/* RIGHT DETAILS */
+.product-details {
+    width: 60%;
+}
+
+.product-details h1 {
+    font-size: 22px;
+    color: #333;
+}
+
+.product-rating {
+    color: #faca51;
+    margin: 8px 0;
+}
+
+.product-price {
+    font-size: 28px;
+    color: #f57224;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* SIZE */
+.size-box button {
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    background: white;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.size-box .active,
+.size-box button:hover {
+    border-color: #f57224;
+    color: #f57224;
+}
+
+/* QUANTITY */
+.quantity-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.quantity-box button {
+    width: 35px;
+    height: 35px;
+    background: #eee;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* BUTTONS */
+.action-buttons {
+    margin-top: 20px;
+}
+
+.buy-now {
+    background: #2abbe8;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.add-cart {
+    background: #f57224;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.buy-now:hover,
+.add-cart:hover {
+    opacity: 0.9;
+}
+
+.product-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+/* ===== DARAZ STYLE BUTTONS ===== */
+
+form button {
+    padding: 14px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Add to Cart - ORANGE */
+form[action="/add_to_cart"] button {
+    background-color: #f57224;
+    color: white;
+}
+
+form[action="/add_to_cart"] button:hover {
+    background-color: #e65c00;
+}
+
+/* Buy Now - BLUE */
+form[action="/checkout"] button {
+    background-color: #2abbe8;
+    color: white;
+}
+
+form[action="/checkout"] button:hover {
+    background-color: #1aa3cc;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+}
+
+.top-bar {
+    background: #ff6801;
+    height: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.checkout-wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* LEFT */
+.delivery-box {
+    background: #fff;
+    padding: 25px;
+    flex: 2;
+    border-radius: 6px;
+}
+
+.delivery-box h2 {
+    margin-bottom: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-grid textarea {
+    grid-column: span 2;
+    resize: none;
+    height: 70px;
+}
+
+.label-title {
+    margin: 20px 0 10px;
+    font-weight: bold;
+}
+
+.label-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.label-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+
+.label-btn.active {
+    border: 2px solid #ff6801;
+    color: #ff6801;
+}
+
+.save-btn {
+    margin-top: 20px;
+    background: #1ba7e1;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+/* RIGHT */
+.summary-box {
+    background: #fff;
+    padding: 20px;
+    flex: 1;
+    border-radius: 6px;
+}
+
+.promo {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.promo input {
+    flex: 1;
+    padding: 10px;
+}
+
+.promo button {
+    background: #1ba7e1;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.total {
+    font-weight: bold;
+    color: #ff6801;
+}
+
+.pay-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #ccc;
+    border: none;
+    font-size: 16px;
+}
+.buy-now-btn {
+    background-color: #1a9cb7;   /* Daraz blue */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.buy-now-btn:hover {
+    background-color: #16849c;
+}
+.checkout-container {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+.checkout-left, .checkout-right {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    width: 50%;
+}
+
+.checkout-left input,
+.checkout-left select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.apply-btn {
+    background: #1a9cb7;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.pay-btn {
+    display: block;
+    background: #f57224; /* Daraz orange */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+}
+/* ---------------- TOP BAR ---------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.top-bar {
+    background: #ff6f00;
+    color: white;
+    padding: 24px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.top-bar .logo {
+    font-weight: bold;
+    font-size: 24px;
+    color:  rgb(255, 255, 255);
+    padding: 12px 12px;
+   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5)
+    
+}
+
+.top-bar .promo a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+
+/* ---------------- CHECKOUT CONTAINER ---------------- */
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* LEFT SIDE FORM */
+.checkout-left {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.checkout-left h3 {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.checkout-left input,
+.checkout-left select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* RIGHT SIDE PROMO & SUMMARY */
+.checkout-right {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.checkout-right h3 {
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.promo-code {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.promo-code input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.promo-code button {
+    background-color: #1a9bdc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.promo-code button:hover {
+    background-color: #1580b0;
+}
+
+/* Order Summary */
+.order-summary p {
+    margin: 5px 0;
+}
+
+.order-summary h2 {
+    margin-top: 15px;
+    color: #131211;
+}
+
+.pay-btn {
+    display: inline-block;
+    background-color: #f87b0de6;
+    color: white;
+    padding: 12px 0px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.pay-btn:hover {
+    background-color: #e65c00;
+}
+
+/* Responsive */
+@media(max-width: 750px){
+    .checkout-container {
+        flex-direction: column;
+    }
+}
+.cart-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    gap: 25px;
+}
+
+/* LEFT SIDE */
+.cart-left {
+    width: 70%;
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.cart-info h4 {
+    margin: 0;
+}
+
+.cart-qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-qty a {
+    background: #f0f0f0;
+    padding: 6px 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.cart-total {
+    font-weight: bold;
+}
+
+/* RIGHT SIDE */
+.cart-right {
+    width: 30%;
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    height: fit-content;
+}
+
+.checkout-btn {
+    display: block;
+    background: #1a9bdc;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.cart-img img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+/* CART MAIN BOX */
+.cart-left,
+.cart-right {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+
+    /* DARAZ STYLE SHADOW */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* SPACE BETWEEN LEFT & RIGHT */
+.cart-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* LEFT BIGGER, RIGHT SMALLER */
+.cart-left {
+    flex: 3;
+}
+
+.cart-right {
+    flex: 1.2;
+}
+.cart-left:hover,
+.cart-right:hover {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+.payment-container {
+    display: flex;
+    max-width: 900px;
+    margin: 40px auto;
+    gap: 20px;
+}
+
+.payment-left,
+.payment-right {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.payment-left {
+    flex: 2;
+}
+
+.payment-right {
+    flex: 1;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.payment-option:hover {
+    border-color: #1a9bdc;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 15px;
+    background: #1a9bdc;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+/* ---------------- TOP BAR ---------------- */
+.top-bar {
+    background-color: #FF6F00; /* Daraz-style orange */
+    padding: 24px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5)
+}
+
+/* Shop Logo */
+.top-bar .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 6px;
+    text-shadow: 4px 4px 6px rgba(0,0,0,0.5);
+}
+
+/* Back Button */
+.top-bar .back-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.top-bar .back-btn:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* ---------------- OPTIONAL RESPONSIVE ---------------- */
+@media (max-width: 600px){
+    .top-bar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .top-bar .logo, .top-bar .back-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* Forgot Password Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Input fields inside modal */
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    background: #FF6F00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #e65c007c;
+}
+
+.forgot-password a {
+    color: #FF6F00;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+/* ---------------- FORGOT PASSWORD BOX GLOW EFFECT ---------------- */
+
+/* Card container for each input */
+.forgot-card {
+    border: 2px solid #ddd;            /* default border color */
+    border-radius: 8px;                 /* rounded corners */
+    padding: 12px 15px;                 /* inner spacing */
+    margin: 10px 0;                     /* spacing between boxes */
+    background: #fff;                   /* white background */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
+    transition: all 0.3s ease;          /* smooth effect */
+}
+
+/* Input inside the card */
+.forgot-card input {
+    width: 100%;
+    border: none;                       /* remove default input border */
+    outline: none;                       /* remove default focus outline */
+    font-size: 16px;
+    background: transparent;             /* show card background */
+}
+
+/* Glow effect when clicked/focused */
+.forgot-card:focus-within {
+    border-color: #FF6F00;              /* orange border */
+    box-shadow: 0 0 12px 3px rgba(255,111,0,0.6); /* orange glow around box */
+    background-color: #fffbea;           /* optional light highlight */
+}
+/* ---------------- FORGOT PASSWORD INPUT BOX GLOW ---------------- */
+
+/* Style all inputs inside forgot password modal */
+#forgot-password-modal input {
+    border: 2px solid #ddd;            /* default border */
+    border-radius: 8px;                 /* rounded corners like a card */
+    padding: 12px;                      /* spacing inside input */
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;          /* smooth glow effect */
+}
+
+/* Glow effect when clicked/focused */
+#forgot-password-modal input:focus {
+    border-color: #FF6F00;              /* orange border */
+    box-shadow: 0 0 12px 3px rgba(255,111,0,0.6); /* orange glow */
+    outline: none;                       /* remove default outline */
+    background-color: #fffbea;           /* optional light highlight */
+}
+/* ---------------- FORGOT PASSWORD INPUT BOX WITH BOX SHADOW ---------------- */
+
+/* Style all inputs inside forgot password modal */
+#forgot-password-modal input {
+    border: 2px solid #ddd;                    /* default border */
+    border-radius: 8px;                         /* rounded corners */
+    padding: 12px;                              /* spacing inside input */
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+    background: #fff;                           /* white background */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);     /* subtle shadow for card effect */
+    transition: all 0.3s ease;                  /* smooth glow and shadow effect */
+}
+
+/* Glow effect + stronger shadow when clicked/focused */
+#forgot-password-modal input:focus {
+    border-color: #ff6f0091;                      /* orange border */
+    box-shadow: 0 0 4px 2px rgba(255, 111, 0, 0.456), /* orange glow */
+                0 4px 12px rgba(0,0,0,0.2);    /* soft deeper shadow for depth */
+    outline: none;                               /* remove default outline */
+    background-color: #fffbea;                  /* optional light highlight */
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+/* 1. Make the container a reference point */
+.search-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px; /* Adjust width as needed */
+}
+
+/* 2. Add padding to the input so text doesn't type over the icon */
+.search-box {
+    width: 100%;
+    padding: 10px 15px;
+    padding-right: 50px; /* THIS creates space inside for the icon */
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+/* 3. Position the icon and give it space from the right edge */
+.search-icon {
+    position: absolute;
+    right: 15px;  /* THIS moves the icon away from the right edge */
+    top: 50%;
+    transform: translateY(-50%); /* Centers the icon vertically */
+    cursor: pointer;
+    font-size: 18px;
+}

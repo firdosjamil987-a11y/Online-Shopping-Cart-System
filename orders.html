@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>JAMI's SHOP</h2>
+</div>
+
+<div class="products">
+    <div class="card">
+        <h2>🧾 My Order History</h2>
+
+        {% if orders %}
+        <table border="1" width="100%" cellpadding="10">
+            <tr>
+                <th>Order ID</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.product_name }}</td>
+                <td>₹{{ order.price }}</td>
+                <td>{{ order.quantity }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No orders found.</p>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

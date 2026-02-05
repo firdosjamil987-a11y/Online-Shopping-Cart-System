@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="login-body">
+
+<div class="box">
+    <h2>User Login</h2>
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Forgot Password Link -->
+    <p class="forgot-password">
+        <a href="#" id="forgot-password-link">Forgot Password?</a>
+    </p>
+
+    <p>New user?
+        <a href="/signup">Sign up</a>
+    </p>
+</div>
+
+<div id="forgot-password-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+
+        <h3>Reset Password</h3>
+        <p>Verify your account to change password</p>
+
+        <form method="POST" action="/reset_password">
+            <input type="text"
+                   name="username"
+                   placeholder="Username or Email"
+                   required>
+
+            <input type="password"
+                   name="old_password"
+                   placeholder="Old Password"
+                   required>
+
+            <input type="password"
+                   name="new_password"
+                   placeholder="New Password"
+                   required>
+            <button type="submit">Change Password</button>
+        </form>
+
+    </div>
+</div>
+
+
+        <!-- Step 2: New Password -->
+        <div id="reset-step2" style="display:none; margin-top:15px;">
+            <input type="password" id="new-password" placeholder="New Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button id="change-password">Change Password</button>
+        </div>
+
+        <p id="reset-message" style="color:green; margin-top:10px;"></p>
+    </div>
+</div>
+
+<!-- JS Script directly in HTML -->
+<script>
+    // Get elements
+    const modal = document.getElementById('forgot-password-modal');
+    const forgotLink = document.getElementById('forgot-password-link');
+    const closeBtn = document.getElementById('close-modal');
+    const sendReset = document.getElementById('send-reset');
+    const resetStep2 = document.getElementById('reset-step2');
+    const resetMessage = document.getElementById('reset-message');
+    const changePasswordBtn = document.getElementById('change-password');
+
+    // Open modal when link is clicked
+    forgotLink.addEventListener('click', function(e){
+        e.preventDefault();
+        modal.style.display = 'block';
+    });
+
+    // Close modal when X is clicked
+    closeBtn.addEventListener('click', function(){
+        modal.style.display = 'none';
+    });
+
+    // Close modal if click outside modal content
+    window.addEventListener('click', function(e){
+        if(e.target === modal){
+            modal.style.display = 'none';
+        }
+    });
+
+    // Step 1: Send Reset
+    sendReset.addEventListener('click', function(){
+        const username = document.getElementById('reset-username').value.trim();
+        if(username){
+            resetStep2.style.display = 'block';
+            resetMessage.textContent = 'Username verified! Enter new password below.';
+        } else {
+            alert('Please enter your username/email.');
+        }
+    });
+
+    // Step 2: Change Password
+    changePasswordBtn.addEventListener('click', function(){
+        const newPass = document.getElementById('new-password').value;
+        const confirmPass = document.getElementById('confirm-password').value;
+
+        if(newPass && confirmPass){
+            if(newPass === confirmPass){
+                resetMessage.textContent = 'Password changed successfully!';
+                resetStep2.style.display = 'none';
+                // You can later connect backend to save password
+            } else {
+                alert('Passwords do not match!');
+            }
+        } else {
+            alert('Please fill all fields.');
+        }
+    });
+</script>
+
+</body>
+</html>

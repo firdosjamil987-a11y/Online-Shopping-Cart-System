@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Method</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<script>
+const paymentOptions = document.querySelectorAll('input[name="payment"]');
+const cardFields = document.getElementById('card-fields');
+const easypaisaFields = document.getElementById('easypaisa-fields');
+
+paymentOptions.forEach(option => {
+    option.addEventListener('change', () => {
+        if(option.value === 'card') {
+            cardFields.style.display = 'block';
+            easypaisaFields.style.display = 'none';
+        } else if(option.value === 'easypaisa') {
+            cardFields.style.display = 'none';
+            easypaisaFields.style.display = 'block';
+        } else {
+            // COD selected
+            cardFields.style.display = 'none';
+            easypaisaFields.style.display = 'none';
+        }
+    });
+});
+</script>
+
+<body>
+<div class="top-bar">
+    <div class="logo">JAMI's SHOP</div>
+    <a href="javascript:history.back()" class="back-btn">Back</a>
+</div>
+<div class="payment-container">
+
+  <div class="payment-left">
+    <h3>Select Payment Method</h3>
+
+    <label class="payment-option">
+        <input type="radio" name="payment" value="cod" checked>
+        <span>Cash on Delivery</span>
+    </label>
+
+    <label class="payment-option">
+        <input type="radio" name="payment" value="card">
+        <span>Credit / Debit Card</span>
+    </label>
+
+    <label class="payment-option">
+        <input type="radio" name="payment" value="easypaisa">
+        <span>EasyPaisa / JazzCash</span>
+    </label>
+
+    <!-- Debit/Credit Card Inputs -->
+    <div id="card-fields" class="payment-fields" style="display:none;">
+        <input type="text" placeholder="Card Number" maxlength="16">
+        <input type="text" placeholder="Expiry (MM/YY)" maxlength="5">
+        <input type="text" placeholder="CVV" maxlength="3">
+    </div>
+
+    <!-- EasyPaisa / JazzCash Inputs -->
+    <div id="easypaisa-fields" class="payment-fields" style="display:none;">
+        <input type="text" placeholder="Pakistan Phone Number">
+    </div>
+</div>
+
+    <!-- RIGHT -->
+    <div class="payment-right">
+        <h3>Order Summary</h3>
+
+        <p>Total Amount</p>
+        <h2>Rs. {{ grand_total if grand_total else "Check at Checkout" }}</h2>
+
+        <form action="/payment_success" method="POST">
+            <button class="confirm-btn">
+                Confirm Order
+            </button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

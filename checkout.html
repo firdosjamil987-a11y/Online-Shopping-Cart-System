@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Information</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="logo">JAMI's SHOP</div>
+    <div class="promo">
+        <a href="/cart">🛒cart</a>
+    </div>
+</div>
+
+<!-- Checkout Container -->
+<div class="checkout-container">
+
+    <!-- LEFT SIDE -->
+    <div class="checkout-left">
+        <h3>Delivery Information</h3>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Phone Number" required>
+            <input type="text" placeholder="Address" required>
+
+            <select>
+                <option value="">Province</option>
+                 <option value="KPK">KPK</option>
+                  <option value="Balochistan">Balochistan</option>
+                <option value="sindh">Sindh</option>
+                <option value="punjab">Punjab</option>
+            </select>
+
+            <select>
+                <option value="">City</option>
+                 <option value="Peshawar">Peshawar</option>
+                  <option value="Islamabad">Islamabad</option>
+                <option value="karachi">Karachi</option>
+                <option value="lahore">Lahore</option>
+            </select>
+
+            <select>
+                <option value="">Area</option>
+                 <option value="Faisal mosque">Faisal mosque</option>
+                  <option value="sadar">sadar</option>
+                <option value="gulshan">Gulshan</option>
+                <option value="dha">DHA</option>
+            </select>
+        </form>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="checkout-right">
+        <h3>Promotion</h3>
+        <div class="promo-code">
+            <input type="text" placeholder="Enter Store/Daraz Code">
+            <button>APPLY</button>
+        </div>
+
+        <h3>Order Summary</h3>
+        <div class="order-summary">
+            {% for item in cart.values() %}
+            <p>{{ item.name }} — Rs. {{ item.price }}</p>
+            {% endfor %}
+
+            <p>Items Total: Rs. {{ total }}</p>
+            <p>Delivery Fee: Rs. {{ delivery_fee }}</p>
+
+            <h2>Total: Rs. {{ grand_total }}</h2>
+
+            <a href="/payment" class="pay-btn">Proceed to Pay</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

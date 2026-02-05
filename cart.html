@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>JAMI's SHOP 🛒</h2>
+    <a href="{{ url_for('home') }}">Back to Shopping</a>
+</div>
+
+<div class="cart-container">
+
+    <!-- LEFT SIDE -->
+    <div class="cart-left">
+        <h3>My Cart 🛒</h3>
+
+        {% if cart %}
+            {% for item, data in cart.items() %}
+            <div class="cart-item">
+
+                <!-- PRODUCT IMAGE -->
+                <div class="cart-img">
+                  <img src="{{ data.image }}" alt="product">
+                </div>
+
+                <!-- PRODUCT INFO -->
+                <div class="cart-info">
+                    <h4>{{ data.name }}</h4>
+                    <p>Rs. {{ data.price }}</p>
+                </div>
+
+                <!-- QUANTITY -->
+                <div class="cart-qty">
+                    <a href="/decrease/{{ item }}">➖</a>
+                    <span>{{ data.qty }}</span>
+                    <a href="/increase/{{ item }}">➕</a>
+                </div>
+
+                <!-- TOTAL -->
+                <div class="cart-total">
+                    Rs. {{ data.price * data.qty }}
+                </div>
+
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No item in cart</p>
+        {% endif %}
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="cart-right">
+        <h3>Order Summary</h3>
+
+        <p>Items Total</p>
+        <p><b>Rs. {{ total }}</b></p>
+
+        <p>Delivery Fee</p>
+        <p><b>Rs. 200</b></p>
+
+        <hr>
+
+        <h2>Total: Rs. {{ total + 200 }}</h2>
+
+        <a href="/checkout" class="checkout-btn">Proceed to Checkout</a>
+    </div>
+
+</div>
+
+</body>
+</html>

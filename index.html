@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Shopping Cart</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+
+    <style>
+        button:active {
+            transform: scale(0.95);
+        }
+        .product-link {
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 🔶 NAVBAR -->
+<div class="navbar">
+    <h2>JAMI's SHOP</h2>
+    <div class="search-container">
+    <input type="text" class="search-box" placeholder="Search products...">
+    <span class="search-icon">🔍</span>
+</div>
+    <div>
+        <a href="/cart">🛒 Cart</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<!-- 🔶 CATEGORY FILTER -->
+<div class="categories">
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('groceries')">Groceries</button>
+    <button onclick="filterProducts('food')">Food</button>
+    <button onclick="filterProducts('electronics')">Electronics</button>
+    <button onclick="filterProducts('tools')">Tools</button>
+</div>
+
+<!-- 🔶 PRODUCTS -->
+<div class="products">
+
+    <!-- 🟢 GROCERIES -->
+    <div class="card" data-category="groceries">
+        <a href="/product/1" class="product-link">
+          <img src="/static/product/basmati.webp" alt="Basmati Rice">
+            <h3>Basmati Rice 10kg</h3>
+            <p class="price">Rs:2000</p>
+        </a>    
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="1">
+            <input type="hidden" name="name" value="Basmati Rice 10kg">
+            <input type="hidden" name="price" value="2000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="card" data-category="groceries">
+        <a href="/product/2" class="product-link">
+           <img src="/static/product/wheat floor.webp" alt="wheat floor">
+            <h3>Wheat Flour 50kg</h3>
+            <p class="price">Rs: 6000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="2">
+            <input type="hidden" name="name" value="Wheat Flour 50kg">
+            <input type="hidden" name="price" value="6000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="card" data-category="groceries">
+        <a href="/product/3" class="product-link">
+           <img src="/static/product/oil.webp" alt="oil">
+            <h3>Cooking Oil 1L</h3>
+            <p class="price">Rs: 2500</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="3">
+            <input type="hidden" name="name" value=" Cooking Oil 1L">
+            <input type="hidden" name="price" value="2500">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="groceries">
+        <a href="/product/4" class="product-link">
+           <img src="/static/product/beans.webp" alt="beans">
+            <h3>beans 5kg</h3>
+            <p class="price">Rs: 1200</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="4">
+            <input type="hidden" name="name" value="beans 5kg">
+            <input type="hidden" name="price" value="1200">
+            <button type="submit">Add to Cart</button>
+        </form>
+   </div>
+    <div class="card" data-category="groceries">
+        <a href="/product/5" class="product-link">
+           <img src="/static/product/masala.webp" alt="masala">
+            <h3>Masala 5kg</h3>
+            <p class="price">Rs: 1500</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="5">
+            <input type="hidden" name="name" value="Masala 5kg">
+            <input type="hidden" name="price" value="1500">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    
+    <div class="card" data-category="groceries">
+        <a href="/product/6" class="product-link">
+            <img src="/static/product/biryani masala.webp" alt="biryani masala">
+            <h3>biryani Masala 5kg</h3>
+            <p class="price">Rs: 2300</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="6">
+            <input type="hidden" name="name" value="biryani Masala 5kg">
+            <input type="hidden" name="price" value="2300">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="groceries">
+        <a href="/product/7" class="product-link">
+            <img src="/static/product/suger.webp" alt="suger">
+            <h3>suger 5kg</h3>
+            <p class="price">Rs: 600</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="7">
+            <input type="hidden" name="name" value="suger  5kg">
+            <input type="hidden" name="price" value="600">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="groceries">
+        <a href="/product/8" class="product-link">
+           <img src="/static/product/olper.webp" alt="olper">
+            <h3>Olper milkpack 500ml</h3>
+            <p class="price">Rs: 400</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="8">
+            <input type="hidden" name="name" value="Olper milkpack 500ml">
+            <input type="hidden" name="price" value="400">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="groceries">
+        <a href="/product/9" class="product-link">
+           <img src="/static/product/almond.webp" alt="almond">
+            <h3>Almond 5kg</h3>
+            <p class="price">Rs: 3000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="9">
+            <input type="hidden" name="name" value="Almond">
+            <input type="hidden" name="price" value="3000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="groceries">
+        <a href="/product/10" class="product-link">
+           <img src="/static/product/pista.webp" alt="pista">
+            <h3>Pista 5kg</h3>
+            <p class="price">Rs: 4000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="10">
+            <input type="hidden" name="name" value="pista 5kg">
+            <input type="hidden" name="price" value="4000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <!-- 🍔 FOOD -->
+    <div class="card" data-category="food">
+        <a href="/product/11" class="product-link">
+           <img src="/static/product/burger.webp" alt="burger">
+            <h3>Burger</h3>
+            <p class="price">Rs: 700</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="11">
+            <input type="hidden" name="name" value="Burger">
+            <input type="hidden" name="price" value="700">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="card" data-category="food">
+        <a href="/product/12" class="product-link">
+            <img src="/static/product/noodle.webp" alt="noodle">
+            <h3>Noodles</h3>
+            <p class="price">Rs: 200</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="12">
+            <input type="hidden" name="name" value="Noodles">
+            <input type="hidden" name="price" value="200">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="card" data-category="food">
+        <a href="/product/13" class="product-link">
+           <img src="/static/product/biscuit.webp" alt="biscuit">
+            <h3>Biscuits</h3>
+            <p class="price">Rs: 100</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="13">
+            <input type="hidden" name="name" value="Biscuits">
+            <input type="hidden" name="price" value="100">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="food">
+        <a href="/product/14" class="product-link">
+           <img src="/static/product/chocolates.webp" alt="chocolates">
+            <h3>Chocolate</h3>
+            <p class="price">Rs: 500</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="14">
+            <input type="hidden" name="name" value="Chocolate">
+            <input type="hidden" name="price" value="500">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div> <div class="card" data-category="food">
+        <a href="/product/15" class="product-link">
+            <img src="/static/product/tea.webp" alt="tea">
+            <h3>Tea</h3>
+            <p class="price">Rs: 200</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="15">
+            <input type="hidden" name="name" value="Tea">
+            <input type="hidden" name="price" value="200">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div> <div class="card" data-category="food">
+        <a href="/product/16" class="product-link">
+           <img src="/static/product/cofee.webp" alt="cofee">
+            <h3>Coffee</h3>
+            <p class="price">Rs: 350</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="16">
+            <input type="hidden" name="name" value="Coffee">
+            <input type="hidden" name="price" value="350">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div> <div class="card" data-category="food">
+        <a href="/product/17" class="product-link">
+            <img src="/static/product/breads.webp" alt="breads">
+            <h3>Breads</h3>
+            <p class="price">Rs: 250</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="17">
+            <input type="hidden" name="name" value="Breads">
+            <input type="hidden" name="price" value="250">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div> <div class="card" data-category="food">
+        <a href="/product/18" class="product-link">
+            <img src="/static/product/eggs.webp" alt="eggs">
+            <h3>Eggs</h3>
+            <p class="price">Rs: 800</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="18">
+            <input type="hidden" name="name" value="Eggs">
+            <input type="hidden" name="price" value="800">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div> <div class="card" data-category="food">
+        <a href="/product/19" class="product-link">
+           <img src="/static/product/butter.webp" alt="butter">
+            <h3>Butter</h3>
+            <p class="price">Rs: 450</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="19">
+            <input type="hidden" name="name" value="Butter">
+            <input type="hidden" name="price" value="450">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div> <div class="card" data-category="food">
+        <a href="/product/20" class="product-link">
+           <img src="/static/product/yougrt.webp" alt="yougrt">
+            <h3>Yogurt</h3>
+            <p class="price">Rs: 200</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="20">
+            <input type="hidden" name="name" value="Yogurt">
+            <input type="hidden" name="price" value="200">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <!-- 🔵 ELECTRONICS -->
+    <div class="card" data-category="electronics">
+        <a href="/product/21" class="product-link">
+          <img src="/static/product/tv.webp" alt="tv">
+            <h3>TV</h3>
+            <p class="price">Rs: 15000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="21">
+            <input type="hidden" name="name" value="TV">
+            <input type="hidden" name="price" value="15000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="card" data-category="electronics">
+        <a href="/product/22" class="product-link">
+            <img src="/static/product/phone.webp" alt="phone">
+            <h3>Smartphone</h3>
+            <p class="price">Rs: 45000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="22">
+            <input type="hidden" name="name" value="Smartphone">
+            <input type="hidden" name="price" value="45000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="card" data-category="electronics">
+        <a href="/product/23" class="product-link">
+            <img src="/static/product/headphone.webp" alt="headphone">
+            <h3>Headphones</h3>
+            <p class="price">Rs: 8000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="23">
+            <input type="hidden" name="name" value="Headphones">
+            <input type="hidden" name="price" value="8000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="electronics">
+        <a href="/product/24" class="product-link">
+          <img src="/static/product/laptop.webp" alt="laptop">
+            <h3>Laptop</h3>
+            <p class="price">Rs: 100000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="24">
+            <input type="hidden" name="name" value="Laptop">
+            <input type="hidden" name="price" value="100000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="electronics">
+        <a href="/product/25" class="product-link">
+           <img src="/static/product/tab.webp" alt="tab">
+            <h3>Tablet</h3>
+            <p class="price">Rs: 20000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="25">
+            <input type="hidden" name="name" value="Tablet">
+            <input type="hidden" name="price" value="20000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="electronics">
+        <a href="/product/26" class="product-link">
+           <img src="/static/product/smrtwatch.webp" alt="smrtwatch">
+            <h3>Smart Watch</h3>
+            <p class="price">Rs: 3500</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="26">
+            <input type="hidden" name="name" value="Smart Watch">
+            <input type="hidden" name="price" value="3500">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="electronics">
+        <a href="/product/27" class="product-link">
+            <img src="/static/product/poerbnk.webp" alt="poerbnk">
+            <h3>Power Bank</h3>
+            <p class="price">Rs: 4000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="27">
+            <input type="hidden" name="name" value="Power Bank">
+            <input type="hidden" name="price" value="4000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="electronics">
+        <a href="/product/28" class="product-link">
+           <img src="/static/product/cctv.webp" alt="cctv">
+            <h3>CCTV Camera</h3>
+            <p class="price">Rs: 10000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="28">
+            <input type="hidden" name="name" value="CCTV Camera">
+            <input type="hidden" name="price" value="10000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="electronics">
+        <a href="/product/29" class="product-link">
+            <img src="/static/product/oven.webp" alt="oven">
+            <h3>Microwave Oven</h3>
+            <p class="price">Rs: 7000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="29">
+            <input type="hidden" name="name" value="Microwave Oven">
+            <input type="hidden" name="price" value="7000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="electronics">
+        <a href="/product/30" class="product-link">
+            <img src="/static/product/iron.webp" alt="iron">
+            <h3>Iron</h3>
+            <p class="price">Rs: 3500</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="30">
+            <input type="hidden" name="name" value="Iron">
+            <input type="hidden" name="price" value="3500">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <!-- 🛠️ TOOLS -->
+    <div class="card" data-category="tools">
+        <a href="/product/31" class="product-link">
+           <img src="/static/product/hmer.webp" alt="hmer">
+            <h3>Hammer</h3>
+            <p class="price">Rs:800</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="31">
+            <input type="hidden" name="name" value="Hammer">
+            <input type="hidden" name="price" value="800">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="card" data-category="tools">
+        <a href="/product/32" class="product-link">
+           <img src="/static/product/screwdriver.webp" alt="screwdriver">
+            <h3>Screwdriver</h3>
+            <p class="price">Rs: 250</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="32">
+            <input type="hidden" name="name" value="Screwdriver">
+            <input type="hidden" name="price" value="250">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="card" data-category="tools">
+        <a href="/product/33" class="product-link">
+          <img src="/static/product/drill.webp" alt="drill">
+            <h3>Electric Drill</h3>
+            <p class="price">Rs: 20000</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="33">
+            <input type="hidden" name="name" value="Electric Drill">
+            <input type="hidden" name="price" value="20000">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <div class="card" data-category="tools">
+        <a href="/product/34" class="product-link">
+            <img src="/static/product/safty.webp" alt="safty">
+            <h3>Safety Gloves</h3>
+            <p class="price">Rs: 700</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="34">
+            <input type="hidden" name="name" value="Safety Gloves">
+            <input type="hidden" name="price" value="700">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+     <div class="card" data-category="tools">
+        <a href="/product/35" class="product-link">
+            <img src="/static/product/tape.webp" alt="tape">
+            <h3>Measuring Tape</h3>
+            <p class="price">Rs: 800</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="35">
+            <input type="hidden" name="name" value="Measuring Tape">
+            <input type="hidden" name="price" value="800">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+     <div class="card" data-category="tools">
+        <a href="/product/36" class="product-link">
+     <img src="/static/product/wrench.webp" alt="wrench">
+            <h3>Wrench</h3>
+            <p class="price">Rs: 899</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="36">
+            <input type="hidden" name="name" value="Wrench">
+            <input type="hidden" name="price" value="899">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+     <div class="card" data-category="tools">
+        <a href="/product/37" class="product-link">
+           <img src="/static/product/cutter.webp" alt="cutter">
+            <h3>Cutter</h3>
+            <p class="price">Rs: 499</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="37">
+            <input type="hidden" name="name" value="Cutter">
+            <input type="hidden" name="price" value="499">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+     <div class="card" data-category="tools">
+        <a href="/product/38" class="product-link">
+            <img src="/static/product/welding.webp" alt="welding">
+            <h3>Welding Machine</h3>
+            <p class="price">Rs: 15999</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="38">
+            <input type="hidden" name="name" value="Welding Machine">
+            <input type="hidden" name="price" value="15999">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+     <div class="card" data-category="tools">
+        <a href="/product/39" class="product-link">
+            <img src="/static/product/handsaw.webp" alt="handsaw">
+            <h3>Hand Saw</h3>
+            <p class="price">Rs:700</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="39">
+            <input type="hidden" name="name" value="Hand Saw">
+            <input type="hidden" name="price" value="700">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+     <div class="card" data-category="tools">
+        <a href="/product/40" class="product-link">
+            <img src="/static/product/drillbits.webp" alt="drillbits">
+            <h3>Drill Bits</h3>
+            <p class="price">Rs: 700</p>
+        </a>
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="40">
+            <input type="hidden" name="name" value="Drill Bits">
+            <input type="hidden" name="price" value="700">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    </div>
+<!-- 🔶 FILTER SCRIPT -->
+<script>
+function filterProducts(category) {
+    document.querySelectorAll(".card").forEach(card => {
+        card.style.display =
+            category === "all" || card.dataset.category === category
+            ? "block" : "none";
+    });
+}
+
+function searchProducts() {
+    let value = document.getElementById("search").value.toLowerCase();
+    document.querySelectorAll(".card").forEach(card => {
+        let name = card.querySelector("h3").innerText.toLowerCase();
+        card.style.display = name.includes(value) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
